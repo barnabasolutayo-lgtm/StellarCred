@@ -405,8 +405,9 @@ function VerifyInner() {
                       )}
                       {on && key === "age" && (
                         <div style={{ marginTop: "0.75rem" }} onClick={(e) => e.stopPropagation()}>
-                          <label className="field-label">{m.attribute}</label>
+                          <label className="field-label" htmlFor="attr-dob-input">{m.attribute}</label>
                           <input
+                            id="attr-dob-input"
                             type="date"
                             value={attributes.date_of_birth}
                             onChange={(e) => setAttr("date_of_birth", e.target.value)}
@@ -415,8 +416,9 @@ function VerifyInner() {
                       )}
                       {on && key === "income" && (
                         <div style={{ marginTop: "0.75rem" }} onClick={(e) => e.stopPropagation()}>
-                          <label className="field-label">{m.attribute}</label>
+                          <label className="field-label" htmlFor="attr-income-input">{m.attribute}</label>
                           <input
+                            id="attr-income-input"
                             type="number"
                             value={attributes.income}
                             onChange={(e) => setAttr("income", e.target.value)}
@@ -425,8 +427,9 @@ function VerifyInner() {
                       )}
                       {on && key === "accreditation" && (
                         <div style={{ marginTop: "0.75rem" }} onClick={(e) => e.stopPropagation()}>
-                          <label className="field-label">{m.attribute}</label>
+                          <label className="field-label" htmlFor="attr-networth-input">{m.attribute}</label>
                           <input
+                            id="attr-networth-input"
                             type="number"
                             value={attributes.net_worth}
                             onChange={(e) => setAttr("net_worth", e.target.value)}
@@ -496,8 +499,8 @@ function VerifyInner() {
                               Allow countries
                             </button>
                           </div>
-                          <label className="field-label">{m.attribute}</label>
-                          <select value={attributes.country_code} onChange={(e) => setAttr("country_code", e.target.value)}>
+                          <label className="field-label" htmlFor="attr-country-select">{m.attribute}</label>
+                          <select id="attr-country-select" value={attributes.country_code} onChange={(e) => setAttr("country_code", e.target.value)}>
                             {COUNTRIES.map((c) => (
                               <option key={c.code} value={c.code}>{c.name} ({c.code})</option>
                             ))}
@@ -515,8 +518,8 @@ function VerifyInner() {
               </div>
 
               <div style={{ marginBottom: "1.5rem" }}>
-                <label className="field-label">Validity period</label>
-                <select value={expiry} onChange={(e) => setExpiry(e.target.value)}>
+                <label className="field-label" htmlFor="expiry-select">Validity period</label>
+                <select id="expiry-select" value={expiry} onChange={(e) => setExpiry(e.target.value)}>
                   {["30 days", "90 days", "1 year"].map((t) => (
                     <option key={t}>{t}</option>
                   ))}
